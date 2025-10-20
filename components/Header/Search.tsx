@@ -89,7 +89,7 @@ export default function Search({
           <input
             type="text"
             placeholder="Search for any IP address or domain"
-            className="p-3 md:w-5/12 rounded-l-md mt-4 text-black"
+            className="p-3 md:w-5/12 rounded-l-md mt-4 "
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
