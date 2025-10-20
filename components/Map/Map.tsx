@@ -3,7 +3,7 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import IconArrow from "/public/images/icon-location.svg";
+const IconArrow = "/images/icon-location.svg";
 
 interface Props {
   location: string | undefined;
@@ -32,13 +32,13 @@ export default function Map({ location, latlin }: Props) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker
-        position={latlin}
-        icon={L.icon({
-          iconUrl: IconArrow.src,
-        })}
-      >
-        <Popup>{location}</Popup>
-      </Marker>
+  position={latlin}
+  icon={L.icon({
+    iconUrl: IconArrow, 
+  })}
+>
+  <Popup>{location}</Popup>
+</Marker>
     </MapContainer>
   );
 }
