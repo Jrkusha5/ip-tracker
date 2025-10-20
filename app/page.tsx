@@ -1,15 +1,22 @@
-import "./globals.css";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "IP Address Tracker",
-  description: "Track IP address details and location.",
-};
+import { useState } from "react";
+import Search from "@/components/Header/Search";
+import Map from "@/components/Map/Map";
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function HomePage() {
+  const [location, setLocation] = useState<string | undefined>();
+  const [latlin, setLatlin] = useState<[number, number]>();
+
   return (
-    <html lang="en">
-      <body className="font-[Rubik] bg-gray-50">{children}</body>
-    </html>
+    <>
+      <Search
+        location={location}
+        setLocation={setLocation}
+        setLatlin={setLatlin}
+        latlin={latlin}
+      />
+      <Map location={location} latlin={latlin} />
+    </>
   );
 }
