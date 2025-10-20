@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Result from "../Result";
 import axios from "axios";
+import Result from "../Result";
 
 interface Props {
   location: string | undefined;
